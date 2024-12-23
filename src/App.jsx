@@ -1,4 +1,5 @@
 
+import Dice from "./components/Dice"
 
 function App() {
   
@@ -6,7 +7,9 @@ function App() {
     <>
     <main>
       <div className="dice-container">
-        
+      <Dice value={2}/><Dice value={2}/><Dice value={2}/>
+      <Dice value={2}/><Dice value={2}/><Dice value={2}/>
+      <Dice value={2}/><Dice value={2}/><Dice value={2}/>
       </div>
     </main>
     </>
