@@ -1,12 +1,17 @@
 import Die from "./components/Die"
-import { useState } from "react"
+import { useState,useRef,useEffect } from "react"
 import { nanoid } from "nanoid"
 import Confetti from "react-confetti"
 export default function App() {
     const [dice, setDice] = useState(()=>generateAllNewDice())
 
     const gameWon = dice.every(die=>die.isHeld)&& dice.every(die=>die.value===dice[0].value)
-
+    const buttonRef = useRef(null)
+    useEffect(()=>{
+        if(gameWon){
+            buttonRef.current.focus()  // It ensures that the "New Game" button is automatically highlighted or ready to press.
+        }
+    },[gameWon])
     function generateAllNewDice() {
         return new Array(10)
             .fill(0)
@@ -56,7 +61,7 @@ export default function App() {
             <div className="dice-container">
                 {diceElements}
             </div>
-            <button className="dice-roll-btn" onClick={rollDice}>{gameWon?"NewGame":"Roll"}</button>
+            <button ref={buttonRef} className="dice-roll-btn" onClick={rollDice}>{gameWon?"NewGame":"Roll"}</button>
         </main>
     )
 }
