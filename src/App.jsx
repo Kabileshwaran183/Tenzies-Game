@@ -3,7 +3,7 @@ import { useState } from "react"
 import { nanoid } from "nanoid"
 
 export default function App() {
-    const [dice, setDice] = useState(generateAllNewDice())
+    const [dice, setDice] = useState(()=>generateAllNewDice())
 
     const gameWon = dice.every(die=>die.isHeld)&& dice.every(die=>die.value===dice[0].value)
 
