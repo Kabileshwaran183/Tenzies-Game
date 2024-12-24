@@ -59,7 +59,17 @@ export default function App() {
 
     return (
         <main>
-            {gameWon && <Confetti />}
+            {gameWon && <Confetti  width={300} // Width of the confetti area
+                    height={500} // Height of the confetti area
+                    numberOfPieces={120}
+                    colors={["violet", "yellow", "black"]}
+                    gravity={0.085}
+                    style={{
+                        position: "absolute",
+                        top: "58%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)", // Centering the confetti
+                    }}/>}
             <h1 className="title">Tenzies</h1>
             <p className="instructions">{gameWon ? `Congratulations! You won by ${count} Moves`:"Roll until all dice are the same. Click each die to freeze it at its current value between rolls."}</p>
             <div className="dice-container">
