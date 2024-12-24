@@ -19,7 +19,7 @@ div#root{
   max-width: 400px;
 }
 main{
-  background-color: #F5F5F5;
+  background-color: white;
     height: 100%;
     border-radius: 5px;
     display: flex;
@@ -45,13 +45,26 @@ main{
   grid-template: auto auto/repeat(5,1fr);
   
 }
+.bot-el{
+  display:flex;
+  align-items: center;
+  gap: 20px;
+}
+.bot-el .right-h{
+  color:#0B2434;
+}
+.bot-el .img-two{
+  width: 40px;
+ }
+ .bot-el .img-three{
+  width: 25px;
+ }
 .die-btn{
   height: 50px;
   width: 50px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   border: none;
-  background-color: white;
   font-family: sans-serif;
   font-size: 1.75rem;
   font-weight: bold;
